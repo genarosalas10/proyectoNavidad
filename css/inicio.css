@@ -2,6 +2,7 @@
 {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 html
 {
@@ -11,9 +12,8 @@ html
 body 
 {
     font-family:'Open Sans';
-    
     background-color: #9BF6FF;
-    
+    scroll-behavior: smooth;
 }
 nav,header, footer
 {
@@ -21,15 +21,14 @@ nav,header, footer
 }
 nav
 {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    padding-left: 0.833333%;
-    padding-right: 0.833333%;
+    padding: 0.7rem 0.833333%;
     background-color: white;
-    width:98.33333333%; /*Calculamos respecto al width en este caso 1200px porque es el ancho de body*/
-    min-height: 4rem;
-   
-  
+    width:100%; 
+    min-height: 6rem;
+    position: sticky;
+    top:0;
+    left:0;
+    z-index: 5;
 }
 ul
 {
@@ -68,117 +67,130 @@ li
     width: 100%;
     height:100%;
 }
-#imagenNavidad
+header
 {
     width: 100%;
-    
-}
-
-#imagenNavidad img
-{
-    width: 100%;
+    height: 100vh;
+    background-image: url("../img/imagen_principal.jpg");
+    background-size: cover;
 }
 main
 {
     width: 100%;/* Lo calculamos respecto al width de su caja contenedora que es 1200 px*/
     margin-top: 1.5rem;
     margin-bottom: 1rem; 
-    min-height: 10rem; 
+    min-height: 100vh; 
     overflow: hidden;
     position: relative;
-}
-main div:nth-child(1)
-{
-    padding-left: 0.4166666666666667%;/* Lo calculamos respecto al width de su caja contenedora que es 1200 px*/
-    float:left ;
-    margin-top:10px;
-    min-height: 500px;
-    width: 48.75%; /* Lo calculamos respecto al width de su caja contenedora que es 1200 px*/
-    /*border:3px solid black;
-    border-radius: 10px;*/
-}
-main div:nth-child(1) p
-{
-    position: relative;
-    top: -20.5rem;
-}
-main div:nth-child(1) iframe
-{
-    position: relative;
-    top: 9.7rem;
-    width: 95.72649572649573%;/* Lo calculamos respecto al width de su caja contenedora que es 585 px*/
-    height: 20.5rem;
+    
 }
 
-
-main div:nth-child(2)
+section
 {
-    float:left ;
-    height: 35rem;
-    width: 49.16666666666667%; /* Lo calculamos respecto al width de su caja contenedora que es 1200 px*/
-    margin-top:1.5rem;
-    margin-left: 1.666666666666667%; /* Lo calculamos respecto al width de su caja contenedora que es 1200 px*/
-    /*border:3px solid black;
-    border-radius: 10px;*/
-    /*background-color: blue;*/
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    font-size: 1.5em;
+    -webkit-box-shadow: 0px 6px 16px 2px rgba(15,12,12,0.2); 
+    box-shadow: 0px 6px 16px 2px rgba(15,12,12,0.2);
 }
-#feliciar
+section p
+{
+    text-align: justify;
+    width: 100%;
+}
+section iframe
+{
+    width: 800px;
+    height: 450px;
+}
+section form
+{
+    font-size: 2rem;
+}
+
+section:nth-child(3)
+{
+     background-color: #6AE1FF; 
+}
+form
+{
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+input, select{
+	padding: 1%;
+	margin-bottom: 1rem;
+	border: 2px solid #3a65ad;
+    width: 40%;
+    border-radius: 20px;
+}
+input[type="submit"]{
+	font-weight: bold;
+	color: white;
+	background-color: #3a65ad;
+	transition: all 500ms ease;
+	width: 20%;
+    display: block;
+}
+input[type="submit"]:hover{
+	background-color: gray;
+	border-color: gray;
+}
+section:nth-child(4)
+{
+    background-color: #6ABFFF;
+    justify-content: center;
+}
+
+section:nth-child(4) img
+{
+   height: 40vh;
+}
+#felicitar
 {
     margin-left: 0;
     margin-top: 2rem;
-    
-    background-color: #6AB6FF;
-    width: 95.72649572649573%;/* Lo calculamos respecto al width de su caja contenedora que es 585 px*/
-    height: 19.5rem;
-    padding-top: 1rem;
-    padding-left: 2.5%;
+    background-color: #38A8FF;
+    width: 100%;
+    height: 60vh;
+    padding-top: 5rem;
+    padding-left: 3%;
     padding-right: 2.5%;
-    margin-top: 6rem;
+    margin-top: 2rem;
     text-align: justify;
+    border-radius: 10px;
+}
+#p1, #p2
+{
+    margin-bottom: 2rem;
+}
+#felicitar
+{
+    font-size: 1.5rem;
 }
 footer
 {
-    background-color: #1C6E8C;
+    /* background-color: #1C6E8C; */
+    background-color: #181818;
     position: absolute;
     bottom: 0;
     left: 0;
     height: 3.5rem;
     width: 100%; /* Lo calculamos respecto al width de su caja contenedora que es 1200 px*/
 }
+
 marquee
 {
     margin-top: 1rem;
+    color: white;
     text-decoration: dashed;
     font-weight: bold;
-}
-@media only screen and (max-width: 500px)
-{
-	#logo
-    {
-        
-        float: none;
-        display: block;
-        width: 20%;
-        text-align: center;
-    }
-    li
-	{
-        padding: 0;
-		display: block;
-		
-	}
-    nav
-    {
-        text-align:center;
-    }
-    
-	ul
-    {
-        float: none;
-        text-align: center;
-    }
-    main div:nth-child(1), main div:nth-child(2)
-    {
-        float: none;
-    }
 }
